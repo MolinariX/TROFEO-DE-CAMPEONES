@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trofeo de Campeones - App Oficial</title>
+    <!-- Fuentes e Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="champion-overlay">
+        <canvas id="confetti"></canvas>
+        <div class="winner-content">
+            <i class="fas fa-crown crown-anim"></i>
+            <h2 class="winner-title">¡GRAN CAMPEÓN!</h2>
+            <div id="winner-display-logo"></div>
+            <h1 class="winner-name" id="winner-display-name"></h1>
+        </div>
+    </div>
+
+    <!-- PANEL LATERAL DE EQUIPO -->
+    <div id="team-detail-panel">
+        <div class="panel-header">
+            <span>Detalles del Equipo</span>
+            <button class="panel-close-btn" onclick="closeTeamDetails()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="team-profile" id="panel-profile">
+            <!-- Inyectado por JS -->
+        </div>
+        <div class="panel-body">
+            <h4 style="color:#fff; margin-bottom:15px; border-left:3px solid var(--accent-red); padding-left:10px;">
+                Historial de Partidos</h4>
+            <!-- Tabla con layout fixed para evitar scroll -->
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Rival</th>
+                        <th style="text-align:right">Res</th>
+                    </tr>
+                </thead>
+                <tbody id="panel-matches">
+                    <!-- Inyectado por JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <header>
+        <h1>Trofeo de <span>Campeones</span></h1>
+        <div class="cat-nav">
+            <div class="cat-btn" onclick="switchCategory('copa')"><i class="fas fa-trophy"></i> COPA</div>
+            <div class="cat-btn" onclick="switchCategory('A')">CAT A</div>
+            <div class="cat-btn" onclick="switchCategory('B')">CAT B</div>
+            <div class="cat-btn active" onclick="switchCategory('C')">CAT C</div>
+        </div>
+    </header>
+
+    <section id="cat-copa" class="section-container">
+        <h2
+            style="text-align:center; margin-bottom:20px; color:#fff; text-transform:uppercase; letter-spacing:2px; font-size:1rem; font-weight:700;">
+            Camino a la Gloria</h2>
+        <div class="bracket-section" id="finals-container"></div>
+    </section>
+
+    <section id="cat-A" class="section-container">
+        <div class="bracket-card gold-border"
+            style="margin:40px auto; max-width:350px; text-align:center; padding:40px;">
+            <i class="fas fa-crown"
+                style="font-size:4rem; color:var(--accent-red); margin-bottom:20px; filter:drop-shadow(0 0 20px rgba(229,9,20,0.5))"></i>
+            <h2 style="margin-bottom:10px; color:#fff;">CATEGORÍA A</h2>
+            <p style="color:#888; font-size:0.9rem;">El campeón espera en la Gran Final.</p>
+        </div>
+    </section>
+
+    <section id="cat-B" class="section-container">
+        <div class="bracket-card"
+            style="margin:40px auto; max-width:350px; text-align:center; padding:40px; border-color:var(--accent-silver);">
+            <i class="fas fa-shield-alt" style="font-size:4rem; color: var(--accent-silver); margin-bottom:20px;"></i>
+            <h2 style="margin-bottom:10px; color:#fff;">CATEGORÍA B</h2>
+            <p style="color:#888; font-size:0.9rem;">Esperando definición...</p>
+        </div>
+    </section>
+
+    <section id="cat-C" class="section-container active">
+
+        <div class="sub-nav">
+            <div class="sub-link active" onclick="showSubSection('tabla-clausura', this)">Clausura</div>
+            <div class="sub-link" onclick="showSubSection('tabla-apertura', this)">Apertura</div>
+            <div class="sub-link" onclick="showSubSection('tabla-anual', this)">Anual</div>
+            <div class="sub-link" onclick="showSubSection('fixture-view', this)">Fixture</div>
+            <div class="sub-link" onclick="showSubSection('stats-view', this)">Stats</div>
+        </div>
+
+        <!-- Tablas -->
+        <div id="tabla-clausura" class="c-subsection">
+            <div class="table-wrapper">
+                <table id="clausura-table-body"></table>
+            </div>
+        </div>
+
+        <div id="tabla-apertura" class="c-subsection" style="display:none;">
+            <div class="table-wrapper">
+                <table id="apertura-table-body"></table>
+            </div>
+        </div>
+
+        <div id="tabla-anual" class="c-subsection" style="display:none;">
+            <div class="table-wrapper">
+                <table id="annual-table-body"></table>
+            </div>
+        </div>
+
+        <!-- Fixture Dividido -->
+        <div id="fixture-view" class="c-subsection" style="display:none;">
+
+            <div class="fixture-section-title">Próxima Fecha</div>
+            <div id="next-match-container"></div>
+
+            <button class="full-fixture-btn" onclick="toggleFullFixture()">
+                <span>Ver Fixture Completo</span>
+                <i class="fas fa-chevron-down" id="fixture-toggle-icon"></i>
+            </button>
+
+            <div id="full-fixture-container" style="display:none; margin-top: 20px; animation: fadeIn 0.5s ease;">
+                <!-- Se llena con JS -->
+            </div>
+        </div>
+
+        <!-- Estadisticas (Nuevo Diseño Tabla Movil) -->
+        <div id="stats-view" class="c-subsection" style="display:none;">
+            <div class="stats-grid">
+
+                <!-- Goleadores -->
+                <div>
+                    <div class="stat-group-title"><i class="fas fa-futbol" style="color:var(--accent-red)"></i> Tabla de
+                        Goleadores</div>
+                    <div class="stats-table-wrapper">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jugador</th>
+                                    <th>Goles</th>
+                                </tr>
+                            </thead>
+                            <tbody id="goleadores-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tarjetas -->
+                <div style="margin-top:20px;">
+                    <div class="stat-group-title"><i class="fas fa-exclamation-triangle"
+                            style="color:var(--accent-yellow)"></i> Sanciones</div>
+                    <div class="stats-table-wrapper">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jugador</th>
+                                    <th>Tarjetas</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tarjetas-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active"
+            onclick="switchCategory('C'); showSubSection('fixture-view', document.querySelectorAll('.sub-link')[3])">
+            <i class="far fa-calendar-alt"></i> Fixture
+        </div>
+        <div class="nav-item"
+            onclick="switchCategory('C'); showSubSection('tabla-clausura', document.querySelectorAll('.sub-link')[0])">
+            <i class="fas fa-list-ol"></i> Tablas
+        </div>
+        <div class="nav-item" onclick="switchCategory('copa')">
+            <i class="fas fa-trophy"></i> Copa
+        </div>
+        <div class="nav-item"
+            onclick="switchCategory('C'); showSubSection('stats-view', document.querySelectorAll('.sub-link')[4])">
+            <i class="fas fa-chart-bar"></i> Stats
+        </div>
+    </nav>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+
+</html>
