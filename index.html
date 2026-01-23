@@ -159,7 +159,7 @@
                 <!-- Tarjetas -->
                 <div style="margin-top:20px;">
                     <div class="stat-group-title"><i class="fas fa-exclamation-triangle"
-                            style="color:var(--accent-yellow)"></i> Sanciones</div>
+                            style="color:var(--accent-yellow)"></i> Tarjetas Acumuladas</div>
                     <div class="stats-table-wrapper">
                         <table class="stats-table">
                             <thead>
@@ -170,6 +170,42 @@
                                 </tr>
                             </thead>
                             <tbody id="tarjetas-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Fechas por Cumplir -->
+                <div style="margin-top:20px;">
+                    <div class="stat-group-title"><i class="fas fa-ban" style="color:var(--accent-red)"></i> Fechas por
+                        Cumplir</div>
+                    <div class="stats-table-wrapper">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jugador</th>
+                                    <th>Fechas</th>
+                                </tr>
+                            </thead>
+                            <tbody id="suspensiones-list"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Bajas / Lesiones -->
+                <div style="margin-top:20px;">
+                    <div class="stat-group-title"><i class="fas fa-user-injured" style="color:#aaa"></i> Bajas /
+                        Lesiones</div>
+                    <div class="stats-table-wrapper">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Jugador</th>
+                                    <th>Motivo</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bajas-list"></tbody>
                         </table>
                     </div>
                 </div>

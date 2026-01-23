@@ -187,10 +187,13 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= JUGADORES =================
         const playersData = [
-            { name: "Gabriel Romanutti", teamId: "pacifico", goals: 5, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png" },
+            { name: "Gabriel Romanutti", teamId: "pacifico", goals: 5, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 1 },
             { name: "Federico Martinez", teamId: "pacifico", goals: 4, yellow: 0, red: 0, img: "imagen/jugadores/federico_martinez.png" },
             { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tomas_quinteros.png" },
-            { name: "M. González", teamId: "la_banda", goals: 3, yellow: 1, red: 1, img: "imagen/jugadores/mgonzalez.png" }
+            { name: "M. González", teamId: "la_banda", goals: 3, yellow: 1, red: 1, img: "imagen/jugadores/mgonzalez.png", suspensionMatches: 2 },
+            // Ejemplos añadidos para demostración de las nuevas tablas
+            { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
+            { name: "Juan Garcia", teamId: "nicassio", goals: 2, yellow: 0, red: 0, img: "imagen/jugadores/default.png", injuryStatus: "Desgarro Muscular" }
         ];
 
         // ================= LOGICA =================
@@ -689,6 +692,52 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                 }
             });
             document.getElementById('tarjetas-list').innerHTML = htmlT;
+
+            // --- NUEVAS TABLAS: SANCIONES Y BAJAS ---
+
+            // Render Suspensiones
+            const suspendidos = playersData.filter(p => p.suspensionMatches && p.suspensionMatches > 0).sort((a,b) => b.suspensionMatches - a.suspensionMatches);
+            let htmlS = '';
+            suspendidos.forEach((p, index) => {
+                let t = teamsData.find(x => x.id === p.teamId);
+                htmlS += `
+                <tr>
+                    <td style="color: #666; font-weight: bold;">${index + 1}</td>
+                    <td>
+                        <div class="player-cell-content">
+                            <img src="${p.img}" class="player-table-img" onerror="this.src='${FALLBACK_USER}';">
+                            <div class="player-info-box">
+                                <span class="player-table-name">${p.name}</span>
+                                <span class="player-table-team">${t ? t.name : '-'}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="text-align: right; font-weight:bold; color:var(--accent-red); padding-right: 15px;">${p.suspensionMatches} F.</td>
+                </tr>`;
+            });
+            document.getElementById('suspensiones-list').innerHTML = htmlS || '<tr><td colspan="3" style="text-align:center; padding:15px; color:#666;">Sin suspensiones activas.</td></tr>';
+
+            // Render Bajas
+            const bajas = playersData.filter(p => p.injuryStatus).sort((a,b) => a.name.localeCompare(b.name));
+            let htmlB = '';
+            bajas.forEach((p, index) => {
+                let t = teamsData.find(x => x.id === p.teamId);
+                htmlB += `
+                <tr>
+                    <td style="color: #666; font-weight: bold;">${index + 1}</td>
+                    <td>
+                        <div class="player-cell-content">
+                            <img src="${p.img}" class="player-table-img" onerror="this.src='${FALLBACK_USER}';">
+                            <div class="player-info-box">
+                                <span class="player-table-name">${p.name}</span>
+                                <span class="player-table-team">${t ? t.name : '-'}</span>
+                            </div>
+                        </div>
+                    </td>
+                    <td style="text-align: right; color:#aaa; font-size:0.8rem; padding-right: 15px;">${p.injuryStatus}</td>
+                </tr>`;
+            });
+            document.getElementById('bajas-list').innerHTML = htmlB || '<tr><td colspan="3" style="text-align:center; padding:15px; color:#666;">Sin bajas reportadas.</td></tr>';
         }
 
         function getTeamLogoFixture(name) {
