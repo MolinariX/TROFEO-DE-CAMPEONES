@@ -431,47 +431,212 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     winnerName.innerText = champ.name;
                     winnerLogo.innerHTML = `<img src="${champ.logo}" class="winner-logo" onerror="this.src='${FALLBACK_IMG}';">`;
                     overlay.classList.add('active');
-                    startConfetti();
+                    startCelebration();
                     setTimeout(() => {
                         overlay.style.opacity = '0';
-                        setTimeout(() => { overlay.classList.remove('active'); stopConfetti(); }, 500);
+                        setTimeout(() => { overlay.classList.remove('active'); stopCelebration(); }, 500);
+                    }, 10000);
+                }
+            } else if (tournamentChampionId) {
+                // FALLBACK: Mantener compatibilidad con variable antigua si se usa
+                const champ = findTeamById(tournamentChampionId);
+                if (champ) {
+                    const overlay = document.getElementById('champion-overlay');
+                    const winnerName = document.getElementById('winner-display-name');
+                    const winnerLogo = document.getElementById('winner-display-logo');
+                    winnerName.innerText = champ.name;
+                    winnerLogo.innerHTML = `<img src="${champ.logo}" class="winner-logo" onerror="this.src='${FALLBACK_IMG}';">`;
+                    overlay.classList.add('active');
+                    startCelebration();
+                    setTimeout(() => {
+                        overlay.style.opacity = '0';
+                        setTimeout(() => { overlay.classList.remove('active'); stopCelebration(); }, 500);
                     }, 10000);
                 }
             }
         }
 
-        let confettiActive = false;
-        function startConfetti() {
+        // === SISTEMA DE CELEBRACIÓN (Confeti Dorado + Fuegos Artificiales) ===
+        let animationFrameId;
+        
+        function startCelebration() {
             const canvas = document.getElementById('confetti');
             const ctx = canvas.getContext('2d');
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            let particles = [];
-            const colors = ['#E50914', '#FF4B5C', '#FFFFFF', '#CCCCCC'];
-            function Particle() {
-                this.x = Math.random() * canvas.width;
-                this.y = Math.random() * canvas.height - canvas.height;
-                this.size = Math.random() * 8 + 4;
-                this.speedY = Math.random() * 3 + 2;
-                this.speedX = Math.random() * 2 - 1;
-                this.color = colors[Math.floor(Math.random() * colors.length)];
+            
+            let confettiParticles = [];
+            let fireworks = [];
+            
+            const confettiColors = ['#FFD700', '#FDB931', '#FFFFE0', '#B8860B', '#FFFFFF']; // Tonos dorados
+            
+            class ConfettiParticle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height - canvas.height;
+                    this.size = Math.random() * 12 + 6;
+                    this.color = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+                    this.speedY = Math.random() * 3 + 2;
+                    this.speedX = Math.random() * 4 - 2;
+                    this.rotation = Math.random() * 360;
+                    this.rotationSpeed = Math.random() * 10 - 5;
+                }
+                update() {
+                    this.y += this.speedY;
+                    this.x += this.speedX;
+                    this.rotation += this.rotationSpeed;
+                    if (this.y > canvas.height) {
+                        this.y = -20;
+                        this.x = Math.random() * canvas.width;
+                    }
+                }
+                draw() {
+                    ctx.save();
+                    ctx.translate(this.x, this.y);
+                    ctx.rotate(this.rotation * Math.PI / 180);
+                    ctx.fillStyle = this.color;
+                    ctx.fillRect(-this.size / 2, -this.size / 4, this.size, this.size / 2); // Forma rectangular (serpentina)
+                    ctx.restore();
+                }
             }
-            for (let i = 0; i < 150; i++) particles.push(new Particle());
-            confettiActive = true;
+
+            class Firework {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = canvas.height;
+                    this.targetY = Math.random() * (canvas.height * 0.5) + canvas.height * 0.1;
+                    this.speed = Math.random() * 3 + 8;
+                    this.radius = 3;
+                    this.hue = Math.random() * 360;
+                    this.exploded = false;
+                    this.particles = [];
+                }
+                update() {
+                    if (!this.exploded) {
+                        this.y -= this.speed;
+                        this.speed *= 0.98; // Resistencia aire
+                        if (this.speed <= 1 || this.y <= this.targetY) {
+                            this.explode();
+                        }
+                    } else {
+                        for (let i = this.particles.length - 1; i >= 0; i--) {
+                            this.particles[i].update();
+                            if (this.particles[i].alpha <= 0) this.particles.splice(i, 1);
+                        }
+                    }
+                }
+                explode() {
+                    this.exploded = true;
+                    // Explosion circular
+                    for (let i = 0; i < 80; i++) {
+                        this.particles.push(new FireworkParticle(this.x, this.y, this.hue));
+                    }
+                }
+                draw() {
+                    if (!this.exploded) {
+                        ctx.beginPath();
+                        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                        ctx.fillStyle = `hsl(${this.hue}, 100%, 70%)`;
+                        ctx.fill();
+                    } else {
+                        this.particles.forEach(p => p.draw());
+                    }
+                }
+            }
+
+            class FireworkParticle {
+                constructor(x, y, hue) {
+                    this.x = x;
+                    this.y = y;
+                    this.hue = hue;
+                    const angle = Math.random() * Math.PI * 2;
+                    const velocity = Math.random() * 4 + 1;
+                    this.vx = Math.cos(angle) * velocity;
+                    this.vy = Math.sin(angle) * velocity;
+                    this.alpha = 1;
+                    this.decay = Math.random() * 0.02 + 0.01;
+                    this.gravity = 0.05;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    this.vy += this.gravity;
+                    this.vx *= 0.95;
+                    this.vy *= 0.95;
+                    this.alpha -= this.decay;
+                }
+                draw() {
+                    ctx.save();
+                    ctx.globalAlpha = this.alpha;
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+                    ctx.fillStyle = `hsl(${this.hue}, 100%, 60%)`;
+                    ctx.fill();
+                    ctx.restore();
+                }
+            }
+
+            // Inicializar confetis
+            for (let i = 0; i < 150; i++) confettiParticles.push(new ConfettiParticle());
+
             function animate() {
-                if (!confettiActive) return;
-                ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach((p, i) => {
-                    p.y += p.speedY;
-                    p.x += p.speedX;
-                    if (p.y > canvas.height) { particles[i] = new Particle(); }
-                    ctx.fillStyle = p.color; ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
-                });
-                requestAnimationFrame(animate);
+                ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar
+
+                // Actualizar y dibujar confeti
+                confettiParticles.forEach(p => { p.update(); p.draw(); });
+
+                // Generar fuegos artificiales aleatorios
+                if (Math.random() < 0.03) { // Probabilidad de lanzamiento
+                    fireworks.push(new Firework());
+                }
+                
+                // Actualizar y dibujar fuegos artificiales
+                for (let i = fireworks.length - 1; i >= 0; i--) {
+                    fireworks[i].update();
+                    fireworks[i].draw();
+                    if (fireworks[i].exploded && fireworks[i].particles.length === 0) {
+                       fireworks.splice(i, 1);
+                    }
+                }
+
+                animationFrameId = requestAnimationFrame(animate);
             }
             animate();
         }
-        function stopConfetti() { confettiActive = false; }
+
+        function stopCelebration() { 
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            const canvas = document.getElementById('confetti');
+            if(canvas) {
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        }
+
+        // Función MANUAL para probar (accesible desde consola: manualCelebrationTest())
+        window.manualCelebrationTest = function() {
+            // Simulamos un equipo campeón cualquiera
+            const testChamp = { name: "EQUIPO PRUEBA", logo: FALLBACK_IMG }; 
+            
+            const overlay = document.getElementById('champion-overlay');
+            const winnerName = document.getElementById('winner-display-name');
+            const winnerLogo = document.getElementById('winner-display-logo');
+            
+            winnerName.innerText = testChamp.name;
+            winnerLogo.innerHTML = `<img src="${testChamp.logo}" class="winner-logo" onerror="this.src='${FALLBACK_IMG}';">`;
+            
+            overlay.classList.add('active');
+            overlay.style.opacity = '1';
+            
+            startCelebration();
+            
+            setTimeout(() => {
+                overlay.style.opacity = '0';
+                setTimeout(() => { overlay.classList.remove('active'); stopCelebration(); }, 500);
+            }, 10000); // 10 segundos
+            
+            console.log("¡Celebración de prueba iniciada! Durará 10s.");
+        };
 
         function calculateStandings() {
             clausuraStandings = teamsData.map(t => ({ ...t, clausura: { j: 0, g: 0, e: 0, p: 0, gf: 0, gc: 0, pts: 0 } }));
