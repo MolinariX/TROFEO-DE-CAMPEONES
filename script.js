@@ -187,13 +187,16 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= JUGADORES =================
         const playersData = [
+            { name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 0, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 1 },
             { name: "Gabriel Romanutti", teamId: "pacifico", goals: 5, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 1 },
             { name: "Federico Martinez", teamId: "pacifico", goals: 4, yellow: 0, red: 0, img: "imagen/jugadores/federico_martinez.png" },
             { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tomas_quinteros.png" },
             { name: "M. González", teamId: "la_banda", goals: 3, yellow: 1, red: 1, img: "imagen/jugadores/mgonzalez.png", suspensionMatches: 2 },
             // Ejemplos añadidos para demostración de las nuevas tablas
             { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
-            { name: "Juan Garcia", teamId: "nicassio", goals: 2, yellow: 0, red: 0, img: "imagen/jugadores/default.png", injuryStatus: "Desgarro Muscular" }
+            { name: "Juan Garcia", teamId: "nicassio", goals: 2, yellow: 0, red: 0, img: "imagen/jugadores/default.png", injuryStatus: "Desgarro Muscular" },
+            { name: "Bernardo Giordano", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/bernardo_giordano.png", injuryStatus: "Desgarro Muscular"  }
+
         ];
 
         // ================= LOGICA =================
