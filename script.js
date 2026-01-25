@@ -284,14 +284,17 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= JUGADORES =================
         const playersData = [
-            { name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 0, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 1 },
-            { name: "Gabriel Romanutti", teamId: "pacifico", goals: 5, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 1 },
-            { name: "Federico Martinez", teamId: "pacifico", goals: 4, yellow: 0, red: 0, img: "imagen/jugadores/federico_martinez.png" },
+            { name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 0, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 0 },
+            { name: "Juan Molinari", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/juan_molinari.png", suspensionMatches: 0 },
+            { name: "Samuel Garay", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
+            { name: "Nicolás Miño", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/nicolas_mino.png", suspensionMatches: 0 },
+            { name: "Gabriel Romanutti", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 0 },
+            { name: "Federico Martinez", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/federico_martinez.png" },
+            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/javier_bilicich.png" },
+            { name: "Santiago Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/santiago_quinteros.png" },
             { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tomas_quinteros.png" },
-            { name: "M. González", teamId: "la_banda", goals: 3, yellow: 1, red: 1, img: "imagen/jugadores/mgonzalez.png", suspensionMatches: 2 },
             // Ejemplos añadidos para demostración de las nuevas tablas
-            { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
-            { name: "Juan Garcia", teamId: "nicassio", goals: 2, yellow: 0, red: 0, img: "imagen/jugadores/default.png", injuryStatus: "Desgarro Muscular" },
+           // { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
             { name: "Bernardo Giordano", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/bernardo_giordano.png", injuryStatus: "Desgarro Muscular"  }
 
         ];
