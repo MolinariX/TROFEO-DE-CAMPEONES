@@ -60,6 +60,47 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             // { id: 'otro_equipo', name: 'Nombre Equipo', logo: 'ruta/imagen.png' }
         ];
 
+        // ================= HELPER PARA DETALLES DE PARTIDOS (SOLO PACÍFICO) =================
+        /**
+         * Crea el HTML de detalles simplificado para Pacífico
+         * @param {Array} goals - [{player: "Nombre", goals: N}, ...]
+         * @param {Array} cards - [{player: "Nombre", type: "amarilla"/"roja"}, ...]
+         */
+        function createPacificoDetails(goals = [], cards = []) {
+            let html = '<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-top: 5px;">';
+            
+            // Columna Goleadores
+            html += '<div><div style="color: var(--accent-red); font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase;">Goles</div>';
+            if (goals && goals.length > 0) {
+                goals.forEach(g => {
+                    // Repite el icono de pelota según la cantidad de goles
+                    const pelotas = '⚽'.repeat(g.goals || 1);
+                    html += `<div style="font-size: 0.85rem; margin-bottom: 3px; color: #ddd; display: flex; align-items: center; gap: 5px;">
+                                <span>${g.player}</span> <span style="font-size: 0.7rem;">${pelotas}</span>
+                             </div>`;
+                });
+            } else {
+                html += '<div style="color: #666; font-size: 0.8rem;">-</div>';
+            }
+            html += '</div>';
+
+            // Columna Tarjetas
+            html += '<div><div style="color: var(--accent-yellow); font-weight: bold; font-size: 0.8rem; margin-bottom: 5px; text-transform: uppercase;">Amonestados</div>';
+            if (cards && cards.length > 0) {
+                cards.forEach(c => {
+                    const icono = c.type === 'roja' ? '🟥' : '🟨';
+                    html += `<div style="font-size: 0.85rem; margin-bottom: 3px; color: #ddd; display: flex; align-items: center; gap: 5px;">
+                                <span>${c.player}</span> <span>${icono}</span>
+                             </div>`;
+                });
+            } else {
+                html += '<div style="color: #666; font-size: 0.8rem;">-</div>';
+            }
+            html += '</div></div>';
+
+            return html;
+        }
+
         // ================= FIXTURE COMPLETO =================
         const fixtureData = [
             {
@@ -67,7 +108,22 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                 matches: [
                     { home: 'Nicassio', away: 'Los Resa', court: 6, turn: 1, date: '24/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Cup Athletic', away: 'Schmol Alineaciones', court: 6, turn: 2, date: '24/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'Pacífico F.C', court: 7, turn: 2, date: '24/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Juv. Venadense', away: 'Pacífico F.C', court: 7, turn: 2, date: '24/01', time: '17:00', 
+                        homeScore: 1, awayScore: 3, played: true,
+                        // FECHA 1: DATOS REALES
+                        details: createPacificoDetails(
+                            [
+                                { player: "Nicolás Miño", goals: 1 },
+                                { player: "Juan Molinari", goals: 1 },
+                                { player: "Samuel Garay", goals: 1 }
+                            ],
+                            [
+                                { player: "Javier Bilicich", type: "amarilla" },
+                                { player: "Santiago Quinteros", type: "amarilla" }
+                            ]
+                        )
+                    },
                     { home: 'Construshop', away: 'Murphy F.C', court: 8, turn: 2, date: '24/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'La Banda FC', away: 'Flamingo F.C', court: 4, turn: 1, date: '24/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Sport Blak', away: 'Sportivo Peñarol', court: 5, turn: 1, date: '24/01', time: '15:00', homeScore: 0, awayScore: 0, played: false }
@@ -77,7 +133,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                 round: 2,
                 matches: [
                     { home: 'Nicassio', away: 'Schmol Alineaciones', court: 1, turn: 1, date: '31/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Pacífico F.C', court: 7, turn: 1, date: '31/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Cup Athletic', away: 'Pacífico F.C', court: 7, turn: 1, date: '31/01', time: '15:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'Juv. Venadense', away: 'Murphy F.C', court: 8, turn: 1, date: '31/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Construshop', away: 'Flamingo F.C', court: 2, turn: 2, date: '31/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'La Banda FC', away: 'Sportivo Peñarol', court: 5, turn: 2, date: '31/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
@@ -87,7 +147,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 3,
                 matches: [
-                    { home: 'Nicassio', away: 'Pacífico F.C', court: 6, turn: 1, date: '07/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Nicassio', away: 'Pacífico F.C', court: 6, turn: 1, date: '07/02', time: '15:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'Cup Athletic', away: 'Murphy F.C', court: 2, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Juv. Venadense', away: 'Flamingo F.C', court: 7, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Construshop', away: 'Sportivo Peñarol', court: 3, turn: 1, date: '07/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
@@ -103,7 +167,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Juv. Venadense', away: 'Sportivo Peñarol', court: 7, turn: 1, date: '14/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Construshop', away: 'Los Resa', court: 1, turn: 2, date: '14/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'La Banda FC', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sport Blak', away: 'Pacífico F.C', court: 8, turn: 2, date: '14/02', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { 
+                        home: 'Sport Blak', away: 'Pacífico F.C', court: 8, turn: 2, date: '14/02', time: '17:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    }
                 ]
             },
             {
@@ -113,7 +181,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Cup Athletic', away: 'Sportivo Peñarol', court: 6, turn: 1, date: '21/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Juv. Venadense', away: 'Los Resa', court: 8, turn: 1, date: '21/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Construshop', away: 'Schmol Alineaciones', court: 3, turn: 2, date: '21/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Pacífico F.C', court: 4, turn: 2, date: '21/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'La Banda FC', away: 'Pacífico F.C', court: 4, turn: 2, date: '21/02', time: '17:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'Sport Blak', away: 'Murphy F.C', court: 7, turn: 2, date: '21/02', time: '17:00', homeScore: 0, awayScore: 0, played: false }
                 ]
             },
@@ -123,7 +195,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Nicassio', away: 'Sportivo Peñarol', court: 1, turn: 1, date: '28/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Cup Athletic', away: 'Los Resa', court: 7, turn: 1, date: '28/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Juv. Venadense', away: 'Schmol Alineaciones', court: 8, turn: 1, date: '28/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Construshop', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Construshop', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/02', time: '17:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'La Banda FC', away: 'Murphy F.C', court: 5, turn: 2, date: '28/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Sport Blak', away: 'Flamingo F.C', court: 6, turn: 2, date: '28/02', time: '17:00', homeScore: 0, awayScore: 0, played: false }
                 ]
@@ -135,7 +211,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Cup Athletic', away: 'Construshop', court: 6, turn: 2, date: '07/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Juv. Venadense', away: 'La Banda FC', court: 7, turn: 2, date: '07/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Sportivo Peñarol', away: 'Los Resa', court: 2, turn: 1, date: '07/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Flamingo F.C', away: 'Pacífico F.C', court: 3, turn: 1, date: '07/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Flamingo F.C', away: 'Pacífico F.C', court: 3, turn: 1, date: '07/03', time: '15:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'Murphy F.C', away: 'Schmol Alineaciones', court: 4, turn: 1, date: '07/03', time: '15:00', homeScore: 0, awayScore: 0, played: false }
                 ]
             },
@@ -147,7 +227,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Construshop', away: 'Sport Blak', court: 8, turn: 1, date: '14/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Sportivo Peñarol', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Flamingo F.C', away: 'Murphy F.C', court: 3, turn: 2, date: '14/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Pacífico F.C', away: 'Los Resa', court: 5, turn: 2, date: '14/03', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { 
+                        home: 'Pacífico F.C', away: 'Los Resa', court: 5, turn: 2, date: '14/03', time: '17:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    }
                 ]
             },
             {
@@ -156,7 +240,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Nicassio', away: 'Construshop', court: 4, turn: 1, date: '21/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Cup Athletic', away: 'La Banda FC', court: 7, turn: 2, date: '21/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Juv. Venadense', away: 'Sport Blak', court: 8, turn: 2, date: '21/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sportivo Peñarol', away: 'Pacífico F.C', court: 2, turn: 1, date: '21/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Sportivo Peñarol', away: 'Pacífico F.C', court: 2, turn: 1, date: '21/03', time: '15:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'Flamingo F.C', away: 'Schmol Alineaciones', court: 6, turn: 1, date: '21/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Murphy F.C', away: 'Los Resa', court: 1, turn: 2, date: '21/03', time: '17:00', homeScore: 0, awayScore: 0, played: false }
                 ]
@@ -169,7 +257,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'La Banda FC', away: 'Construshop', court: 6, turn: 2, date: '28/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Sportivo Peñarol', away: 'Murphy F.C', court: 1, turn: 1, date: '28/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Flamingo F.C', away: 'Los Resa', court: 2, turn: 1, date: '28/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Schmol Alineaciones', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/03', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { 
+                        home: 'Schmol Alineaciones', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/03', time: '17:00', 
+                        homeScore: 0, awayScore: 0, played: false, 
+                        details: createPacificoDetails([], []) 
+                    }
                 ]
             },
             {
@@ -179,10 +271,15 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Juv. Venadense', away: 'Construshop', court: 3, turn: 1, date: '04/04', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'La Banda FC', away: 'Sport Blak', court: 7, turn: 1, date: '04/04', time: '15:00', homeScore: 0, awayScore: 0, played: false },
                     { home: 'Sportivo Peñarol', away: 'Flamingo F.C', court: 1, turn: 2, date: '04/04', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Murphy F.C', away: 'Pacífico F.C', court: 6, turn: 2, date: '04/04', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { 
+                        home: 'Murphy F.C', away: 'Pacífico F.C', court: 6, turn: 2, date: '04/04', time: '17:00', 
+                        homeScore: 0, awayScore: 0, played: false,
+                        details: createPacificoDetails([], []) 
+                    },
                     { home: 'Schmol Alineaciones', away: 'Los Resa', court: 8, turn: 2, date: '04/04', time: '17:00', homeScore: 0, awayScore: 0, played: false }
                 ]
             }
+
         ];
 
         // ================= JUGADORES =================
