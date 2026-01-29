@@ -106,27 +106,27 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 1,
                 matches: [
-                    { home: 'Nicassio', away: 'Los Resa', court: 6, turn: 1, date: '24/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Schmol Alineaciones', court: 6, turn: 2, date: '24/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Los Resa', court: 6, turn: 1, date: '24/01', time: '15:00', homeScore: 4, awayScore: 1, played: true },
+                    { home: 'Cup Athletic', away: 'Schmol Alineaciones', court: 6, turn: 2, date: '24/01', time: '17:00', homeScore: 3, awayScore: 2, played: true },
                     { 
                         home: 'Juv. Venadense', away: 'Pacífico F.C', court: 7, turn: 2, date: '24/01', time: '17:00', 
                         homeScore: 1, awayScore: 3, played: true,
                         // FECHA 1: DATOS REALES
                         details: createPacificoDetails(
                             [
-                                { player: "Nicolás Miño", goals: 1 },
+                                { player: "Federico Martínez", goals: 1 },
                                 { player: "Juan Molinari", goals: 1 },
                                 { player: "Samuel Garay", goals: 1 }
                             ],
                             [
-                                { player: "Javier Bilicich", type: "amarilla" },
+                                //{ player: "Javier Bilicich", type: "amarilla" },
                                 { player: "Santiago Quinteros", type: "amarilla" }
                             ]
                         )
                     },
-                    { home: 'Construshop', away: 'Murphy F.C', court: 8, turn: 2, date: '24/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Flamingo F.C', court: 4, turn: 1, date: '24/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sport Blak', away: 'Sportivo Peñarol', court: 5, turn: 1, date: '24/01', time: '15:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'Construshop', away: 'Murphy F.C', court: 8, turn: 2, date: '24/01', time: '17:00', homeScore: 4, awayScore: 1, played: true },
+                    { home: 'La Banda FC', away: 'Flamingo F.C', court: 4, turn: 1, date: '24/01', time: '15:00', homeScore: 6, awayScore: 3, played: true },
+                    { home: 'Sport Blak', away: 'Sportivo Peñarol', court: 5, turn: 1, date: '24/01', time: '15:00', homeScore: 2, awayScore: 1, played: true }
                 ]
             },
             {
@@ -287,10 +287,10 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             { name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 0, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 0 },
             { name: "Juan Molinari", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/juan_molinari.png", suspensionMatches: 0 },
             { name: "Samuel Garay", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
-            { name: "Nicolás Miño", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/nicolas_mino.png", suspensionMatches: 0 },
+            { name: "Nicolás Miño", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/nicolas_mino.png", suspensionMatches: 0 },
             { name: "Gabriel Romanutti", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 0 },
-            { name: "Federico Martinez", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/federico_martinez.png" },
-            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/javier_bilicich.png" },
+            { name: "Federico Martinez", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/federico_martinez.png" },
+            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/javier_bilicich.png" },
             { name: "Santiago Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/santiago_quinteros.png" },
             { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tomas_quinteros.png" },
             // Ejemplos añadidos para demostración de las nuevas tablas
