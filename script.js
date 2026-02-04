@@ -132,13 +132,13 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 2,
                 matches: [
-                    { home: 'Nicassio', away: 'Schmol Alineaciones', court: 1, turn: 1, date: '31/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Schmol Alineaciones', court: 1, turn: 1, date: '31/01', time: '15:00', homeScore: 6, awayScore: 1, played: true },
                     { 
                         home: 'Cup Athletic', away: 'Pacífico F.C', court: 7, turn: 1, date: '31/01', time: '15:00', 
                         homeScore: 1, awayScore: 1, played: true,
                         details: createPacificoDetails(
                             [
-                                { player: "Samuel Garay", goals: 1 }
+                                { player: "Samuel Garay (P)", goals: 1 }
                             ],
                             [
                                 { player: "Javier Bilicich", type: "roja" },
@@ -147,10 +147,10 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                             ]
                         ) 
                     },
-                    { home: 'Juv. Venadense', away: 'Murphy F.C', court: 8, turn: 1, date: '31/01', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Construshop', away: 'Flamingo F.C', court: 2, turn: 2, date: '31/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Sportivo Peñarol', court: 5, turn: 2, date: '31/01', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sport Blak', away: 'Los Resa', court: 6, turn: 2, date: '31/01', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'Juv. Venadense', away: 'Murphy F.C', court: 8, turn: 1, date: '31/01', time: '15:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'Construshop', away: 'Flamingo F.C', court: 2, turn: 2, date: '31/01', time: '17:00', homeScore: 1, awayScore: 0, played: true },
+                    { home: 'La Banda FC', away: 'Sportivo Peñarol', court: 5, turn: 2, date: '31/01', time: '17:00', homeScore: 4, awayScore: 0, played: true },
+                    { home: 'Sport Blak', away: 'Los Resa', court: 6, turn: 2, date: '31/01', time: '17:00', homeScore: 2, awayScore: 2, played: true }
                 ]
             },
             {
@@ -293,13 +293,13 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= JUGADORES =================
         const playersData = [
-            { name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 0, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 0 },
-            { name: "Juan Molinari", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/juan_molinari.png", suspensionMatches: 0 },
-            { name: "Samuel Garay", teamId: "pacifico", goals: 2, yellow: 0, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
+            //{ name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 0, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 0 },
+            { name: "Juan Molinari", teamId: "pacifico", goals: 1, yellow: 1, red: 0, img: "imagen/jugadores/juan_molinari.png", suspensionMatches: 0 },
+            { name: "Samuel Garay", teamId: "pacifico", goals: 2, yellow: 1, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
             { name: "Nicolás Miño", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/nicolas_mino.png", suspensionMatches: 0 },
-            { name: "Gabriel Romanutti", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 0 },
+            //{ name: "Gabriel Romanutti", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 0 },
             { name: "Federico Martinez", teamId: "pacifico", goals: 1, yellow: 0, red: 1, img: "imagen/jugadores/federico_martinez.png",suspensionMatches: 1 },
-            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/javier_bilicich.png", suspensionMatches: 1 },
+            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/javier_bilicich.png", suspensionMatches: 2 },
             { name: "Santiago Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/santiago_quinteros.png" },
             { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 2, red: 0, img: "imagen/jugadores/tomas_quinteros.png" },
             // Ejemplos añadidos para demostración de las nuevas tablas
