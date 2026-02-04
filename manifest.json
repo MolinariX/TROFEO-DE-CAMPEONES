@@ -1,0 +1,21 @@
+{
+    "name": "Trofeo de Campeones",
+    "short_name": "Campeones",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#141414",
+    "theme_color": "#000000",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "imagen/logo.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "imagen/logo.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

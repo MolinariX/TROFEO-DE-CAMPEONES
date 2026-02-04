@@ -14,7 +14,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             { id: 'nicassio', name: 'Nicassio', shortName: 'Nicassio', logo: 'imagen/equipos/nicassio.png', apertura: { j: 11, g: 6, e: 2, p: 3, gf: 29, gc: 18, pts: 20 } },
             { id: 'los_resa', name: 'Los Resa', shortName: 'Los Resa', logo: 'imagen/equipos/los_resa.png', apertura: { j: 11, g: 6, e: 2, p: 3, gf: 22, gc: 19, pts: 20 } },
             { id: 'schmol', name: 'Schmol Alineaciones', shortName: 'Schmol A.', logo: 'imagen/equipos/schmol.png', apertura: { j: 11, g: 6, e: 1, p: 4, gf: 26, gc: 19, pts: 19 } },
-            { id: 'pacifico', name: 'Pacífico F.C', shortName: 'Pacífico', logo: 'imagen/equipos/pacifico.png', apertura: { j: 11, g: 4, e: 3, p: 4, gf: 27, gc: 22, pts: 15 } },
+            { id: 'pacifico', name: 'Pacífico F.C', shortName: 'Pacífico', logo: 'imagen/equipos/pacifico.png?v=' + new Date().getTime(), apertura: { j: 11, g: 4, e: 3, p: 4, gf: 27, gc: 22, pts: 15 } },
             { id: 'sp_penarol', name: 'Sportivo Peñarol', shortName: 'S. Peñarol', logo: 'imagen/equipos/sp_penarol.png', apertura: { j: 11, g: 2, e: 3, p: 6, gf: 15, gc: 31, pts: 9 } },
             { id: 'cup_athletic', name: 'Cup Athletic', shortName: 'Cup Ath.', logo: 'imagen/equipos/cup_athletic.png', apertura: { j: 11, g: 0, e: 4, p: 7, gf: 9, gc: 22, pts: 4 } },
             { id: 'sport_blak', name: 'Sport Blak', shortName: 'Sport Blak', logo: 'imagen/equipos/sport_blak.png', apertura: { j: 11, g: 0, e: 2, p: 9, gf: 7, gc: 43, pts: 2 } },
