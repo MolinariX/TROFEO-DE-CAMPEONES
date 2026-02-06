@@ -3,7 +3,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= CONFIGURACIÓN =================
         const tournamentChampionId = null;
-        const currentFixtureRound = 2;
+        const currentFixtureRound = 3;
 
         // ================= DATOS EQUIPOS CON ABREVIATURAS =================
         const teamsData = [
