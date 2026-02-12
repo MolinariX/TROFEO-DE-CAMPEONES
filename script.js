@@ -169,11 +169,11 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                             ]
                         )
                     },
-                    { home: 'Cup Athletic', away: 'Murphy F.C', court: 2, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'Flamingo F.C', court: 7, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Construshop', away: 'Sportivo Peñarol', court: 3, turn: 1, date: '07/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Los Resa', court: 5, turn: 1, date: '07/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sport Blak', away: 'Schmol Alineaciones', court: 1, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'Cup Athletic', away: 'Murphy F.C', court: 2, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 2, played: true },
+                    { home: 'Juv. Venadense', away: 'Flamingo F.C', court: 7, turn: 2, date: '07/02', time: '17:00', homeScore: 2, awayScore: 1, played: true },
+                    { home: 'Construshop', away: 'Sportivo Peñarol', court: 3, turn: 1, date: '07/02', time: '15:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'La Banda FC', away: 'Los Resa', court: 5, turn: 1, date: '07/02', time: '15:00', homeScore: 3, awayScore: 2, played: true },
+                    { home: 'Sport Blak', away: 'Schmol Alineaciones', court: 1, turn: 2, date: '07/02', time: '17:00', homeScore: 2, awayScore: 0, played: true }
                 ]
             },
             {
