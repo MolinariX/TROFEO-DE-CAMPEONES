@@ -179,14 +179,14 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 4,
                 matches: [
-                    { home: 'Nicassio', away: 'Murphy F.C', court: 3, turn: 1, date: '14/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Flamingo F.C', court: 4, turn: 1, date: '14/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'Sportivo Peñarol', court: 7, turn: 1, date: '14/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Construshop', away: 'Los Resa', court: 1, turn: 2, date: '14/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Murphy F.C', court: 3, turn: 1, date: '14/02', time: '15:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'Cup Athletic', away: 'Flamingo F.C', court: 4, turn: 1, date: '14/02', time: '15:00', homeScore: 0, awayScore: 2, played: true },
+                    { home: 'Juv. Venadense', away: 'Sportivo Peñarol', court: 7, turn: 1, date: '14/02', time: '15:00', homeScore: 2, awayScore: 2, played: true },
+                    { home: 'Construshop', away: 'Los Resa', court: 1, turn: 2, date: '14/02', time: '17:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'La Banda FC', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/02', time: '17:00', homeScore: 5, awayScore: 1, played: true },
                     { 
                         home: 'Sport Blak', away: 'Pacífico F.C', court: 8, turn: 2, date: '14/02', time: '17:00', 
-                        homeScore: 0, awayScore: 0, played: false,
+                        homeScore: 0, awayScore: 0, played: true,
                         details: createPacificoDetails([], []) 
                     }
                 ]
@@ -310,12 +310,12 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             { name: "Samuel Garay", teamId: "pacifico", goals: 4, yellow: 1, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
             { name: "Gabriel Romanutti", teamId: "pacifico", goals: 0, yellow: 1, red: 1, img: "imagen/jugadores/gabi_romanutti.png", suspensionMatches: 0 },
             { name: "Federico Martinez", teamId: "pacifico", goals: 1, yellow: 1, red: 1, img: "imagen/jugadores/federico_martinez.png",suspensionMatches: 0 },
-            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/javier_bilicich.png", suspensionMatches: 1 },
+            { name: "Javier Bilicich", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/javier_bilicich.png", suspensionMatches: 0 },
             { name: "Agustín Alvarez", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/agustin_alvarez.png", suspensionMatches: 0 },
             { name: "Tobias Fresco", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tobias_fresco.png", suspensionMatches: 0 },
             // Ejemplos añadidos para demostración de las nuevas tablas
            // { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
-            { name: "Bernardo Giordano", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/bernardo_giordano.png", injuryStatus: "Desgarro Muscular"  }
+            { name: "Bernardo Giordano", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/bernardo_giordano.png", injuryStatus: false  }
 
         ];
 
