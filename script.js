@@ -200,7 +200,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Construshop', away: 'Schmol Alineaciones', court: 3, turn: 2, date: '21/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
                     { 
                         home: 'La Banda FC', away: 'Pacífico F.C', court: 4, turn: 2, date: '21/02', time: '17:00', 
-                        homeScore: 0, awayScore: 0, played: false,
+                        homeScore: 4, awayScore: 0, played: true,
                         details: createPacificoDetails([], []) 
                     },
                     { home: 'Sport Blak', away: 'Murphy F.C', court: 7, turn: 2, date: '21/02', time: '17:00', homeScore: 0, awayScore: 0, played: false }
