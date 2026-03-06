@@ -310,7 +310,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= JUGADORES =================
         const playersData = [
-            { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 4, red: 0, img: "imagen/jugadores/tomas_quinteros.png", suspensionMatches: 0 },
+            { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/tomas_quinteros.png", suspensionMatches: 0 },
             { name: "Alexis Silva", teamId: "pacifico", goals: 0, yellow: 3, red: 2, img: "imagen/jugadores/alexis_silva.png", suspensionMatches: 0 },
             { name: "Santiago Quinteros", teamId: "pacifico", goals: 0, yellow: 3, red: 0, img: "imagen/jugadores/santiago_quinteros.png" },
             { name: "Cristian Dulcich", teamId: "pacifico", goals: 0, yellow: 3, red: 0, img: "imagen/jugadores/cristian_dulcich.png", suspensionMatches: 0 },
