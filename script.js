@@ -216,16 +216,16 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 6,
                 matches: [
-                    { home: 'Nicassio', away: 'Sportivo Peñarol', court: 1, turn: 1, date: '28/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Los Resa', court: 7, turn: 1, date: '28/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'Schmol Alineaciones', court: 8, turn: 1, date: '28/02', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Sportivo Peñarol', court: 1, turn: 1, date: '28/02', time: '15:00', homeScore: 2, awayScore: 1, played: true },
+                    { home: 'Cup Athletic', away: 'Los Resa', court: 7, turn: 1, date: '28/02', time: '15:00', homeScore: 1, awayScore: 6, played: true },
+                    { home: 'Juv. Venadense', away: 'Schmol Alineaciones', court: 8, turn: 1, date: '28/02', time: '15:00', homeScore: 1, awayScore: 1, played: true },
                     { 
                         home: 'Construshop', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/02', time: '17:00', 
-                        homeScore: 0, awayScore: 0, played: false,
+                        homeScore: 5, awayScore: 2, played: true,
                         details: createPacificoDetails([], []) 
                     },
-                    { home: 'La Banda FC', away: 'Murphy F.C', court: 5, turn: 2, date: '28/02', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sport Blak', away: 'Flamingo F.C', court: 6, turn: 2, date: '28/02', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'La Banda FC', away: 'Murphy F.C', court: 5, turn: 2, date: '28/02', time: '17:00', homeScore: 3, awayScore: 1, played: true },
+                    { home: 'Sport Blak', away: 'Flamingo F.C', court: 6, turn: 2, date: '28/02', time: '17:00', homeScore: 2, awayScore: 2, played: true }
                 ]
             },
             {
