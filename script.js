@@ -3,7 +3,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= CONFIGURACIÓN =================
         const tournamentChampionId = null;
-        const currentFixtureRound = 6;
+        const currentFixtureRound = 7;
 
         // ================= DATOS EQUIPOS CON ABREVIATURAS =================
         const teamsData = [
@@ -224,7 +224,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                         homeScore: 5, awayScore: 2, played: true,
                         details: createPacificoDetails([
                             {player: "Gabriel Romanutti ", goals: 1 },
-                            {player: "Manu ", goals: 1 }], []) 
+                            {player: "Manuel Camino ", goals: 1 }], []) 
                     },
                     { home: 'La Banda FC', away: 'Murphy F.C', court: 5, turn: 2, date: '28/02', time: '17:00', homeScore: 3, awayScore: 1, played: true },
                     { home: 'Sport Blak', away: 'Flamingo F.C', court: 6, turn: 2, date: '28/02', time: '17:00', homeScore: 2, awayScore: 2, played: true }
@@ -322,7 +322,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             { name: "Samuel Garay", teamId: "pacifico", goals: 4, yellow: 1, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
             { name: "Agustín Alvarez", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/agustin_alvarez.png", suspensionMatches: 0 },
             { name: "Tobias Fresco", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tobias_fresco.png", suspensionMatches: 0 },
-            { name: "Manu", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/manu.png", suspensionMatches: 0 },
+            { name: "Manuel Camino", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/manuel_camino.png", suspensionMatches: 0 },
             // Ejemplos añadidos para demostración de las nuevas tablas
            // { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
             { name: "Bernardo Giordano", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/bernardo_giordano.png", injuryStatus: false  }
