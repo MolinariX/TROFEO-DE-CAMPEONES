@@ -310,7 +310,6 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
 
         // ================= JUGADORES =================
         const playersData = [
-            { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/tomas_quinteros.png", suspensionMatches: 0 },
             { name: "Santiago Quinteros", teamId: "pacifico", goals: 0, yellow: 3, red: 0, img: "imagen/jugadores/santiago_quinteros.png" },
             { name: "Cristian Dulcich", teamId: "pacifico", goals: 0, yellow: 3, red: 0, img: "imagen/jugadores/cristian_dulcich.png", suspensionMatches: 0 },
             { name: "Nicolás Miño", teamId: "pacifico", goals: 0, yellow: 2, red: 0, img: "imagen/jugadores/nicolas_mino.png", suspensionMatches: 0 },
@@ -320,6 +319,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             { name: "Juan Molinari", teamId: "pacifico", goals: 1, yellow: 1, red: 0, img: "imagen/jugadores/juan_molinari.png", suspensionMatches: 0, injuryStatus: "Desgarro Muscular" },
             { name: "Samuel Garay", teamId: "pacifico", goals: 4, yellow: 1, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
             { name: "Tobias Fresco", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tobias_fresco.png", suspensionMatches: 0 },
+            { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/tomas_quinteros.png", suspensionMatches: 0 },
             { name: "Manuel Camino", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/manuel_camino.png", suspensionMatches: 0 },
             // Ejemplos añadidos para demostración de las nuevas tablas
            // { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
