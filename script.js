@@ -106,10 +106,10 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 1,
                 matches: [
-                    { home: 'Nicassio', away: 'Los Resa', court: 6, turn: 1, date: '24/01', time: '15:00', homeScore: 4, awayScore: 1, played: true },
-                    { home: 'Cup Athletic', away: 'Schmol Alineaciones', court: 6, turn: 2, date: '24/01', time: '17:00', homeScore: 3, awayScore: 2, played: true },
+                    { home: 'Nicassio', away: 'Los Resa', court: 6, turn: 1, date: '24/01', time: '14:00', homeScore: 4, awayScore: 1, played: true },
+                    { home: 'Cup Athletic', away: 'Schmol Alineaciones', court: 6, turn: 2, date: '24/01', time: '16:00', homeScore: 3, awayScore: 2, played: true },
                     { 
-                        home: 'Juv. Venadense', away: 'Pacífico F.C', court: 7, turn: 2, date: '24/01', time: '17:00', 
+                        home: 'Juv. Venadense', away: 'Pacífico F.C', court: 7, turn: 2, date: '24/01', time: '16:00', 
                         homeScore: 1, awayScore: 3, played: true,
                         // FECHA 1: DATOS REALES
                         details: createPacificoDetails(
@@ -124,17 +124,17 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                             ]
                         )
                     },
-                    { home: 'Construshop', away: 'Murphy F.C', court: 8, turn: 2, date: '24/01', time: '17:00', homeScore: 4, awayScore: 1, played: true },
-                    { home: 'La Banda FC', away: 'Flamingo F.C', court: 4, turn: 1, date: '24/01', time: '15:00', homeScore: 6, awayScore: 3, played: true },
-                    { home: 'Sport Blak', away: 'Sportivo Peñarol', court: 5, turn: 1, date: '24/01', time: '15:00', homeScore: 2, awayScore: 1, played: true }
+                    { home: 'Construshop', away: 'Murphy F.C', court: 8, turn: 2, date: '24/01', time: '16:00', homeScore: 4, awayScore: 1, played: true },
+                    { home: 'La Banda FC', away: 'Flamingo F.C', court: 4, turn: 1, date: '24/01', time: '14:00', homeScore: 6, awayScore: 3, played: true },
+                    { home: 'Sport Blak', away: 'Sportivo Peñarol', court: 5, turn: 1, date: '24/01', time: '14:00', homeScore: 2, awayScore: 1, played: true }
                 ]
             },
             {
                 round: 2,
                 matches: [
-                    { home: 'Nicassio', away: 'Schmol Alineaciones', court: 1, turn: 1, date: '31/01', time: '15:00', homeScore: 6, awayScore: 1, played: true },
+                    { home: 'Nicassio', away: 'Schmol Alineaciones', court: 1, turn: 1, date: '31/01', time: '14:00', homeScore: 6, awayScore: 1, played: true },
                     { 
-                        home: 'Cup Athletic', away: 'Pacífico F.C', court: 7, turn: 1, date: '31/01', time: '15:00', 
+                        home: 'Cup Athletic', away: 'Pacífico F.C', court: 7, turn: 1, date: '31/01', time: '14:00', 
                         homeScore: 1, awayScore: 1, played: true,
                         details: createPacificoDetails(
                             [
@@ -148,17 +148,17 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                             ]
                         ) 
                     },
-                    { home: 'Juv. Venadense', away: 'Murphy F.C', court: 8, turn: 1, date: '31/01', time: '15:00', homeScore: 3, awayScore: 0, played: true },
-                    { home: 'Construshop', away: 'Flamingo F.C', court: 2, turn: 2, date: '31/01', time: '17:00', homeScore: 1, awayScore: 0, played: true },
-                    { home: 'La Banda FC', away: 'Sportivo Peñarol', court: 5, turn: 2, date: '31/01', time: '17:00', homeScore: 4, awayScore: 0, played: true },
-                    { home: 'Sport Blak', away: 'Los Resa', court: 6, turn: 2, date: '31/01', time: '17:00', homeScore: 2, awayScore: 2, played: true }
+                    { home: 'Juv. Venadense', away: 'Murphy F.C', court: 8, turn: 1, date: '31/01', time: '14:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'Construshop', away: 'Flamingo F.C', court: 2, turn: 2, date: '31/01', time: '16:00', homeScore: 1, awayScore: 0, played: true },
+                    { home: 'La Banda FC', away: 'Sportivo Peñarol', court: 5, turn: 2, date: '31/01', time: '16:00', homeScore: 4, awayScore: 0, played: true },
+                    { home: 'Sport Blak', away: 'Los Resa', court: 6, turn: 2, date: '31/01', time: '16:00', homeScore: 2, awayScore: 2, played: true }
                 ]
             },
             {
                 round: 3,
                 matches: [
                     { 
-                        home: 'Nicassio', away: 'Pacífico F.C', court: 6, turn: 1, date: '07/02', time: '15:00', 
+                        home: 'Nicassio', away: 'Pacífico F.C', court: 6, turn: 1, date: '07/02', time: '14:00', 
                         homeScore: 5, awayScore: 2, played: true,
                         details: createPacificoDetails(
                             [
@@ -169,23 +169,23 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                             ]
                         )
                     },
-                    { home: 'Cup Athletic', away: 'Murphy F.C', court: 2, turn: 2, date: '07/02', time: '17:00', homeScore: 0, awayScore: 2, played: true },
-                    { home: 'Juv. Venadense', away: 'Flamingo F.C', court: 7, turn: 2, date: '07/02', time: '17:00', homeScore: 2, awayScore: 1, played: true },
-                    { home: 'Construshop', away: 'Sportivo Peñarol', court: 3, turn: 1, date: '07/02', time: '15:00', homeScore: 3, awayScore: 0, played: true },
-                    { home: 'La Banda FC', away: 'Los Resa', court: 5, turn: 1, date: '07/02', time: '15:00', homeScore: 3, awayScore: 2, played: true },
-                    { home: 'Sport Blak', away: 'Schmol Alineaciones', court: 1, turn: 2, date: '07/02', time: '17:00', homeScore: 2, awayScore: 0, played: true }
+                    { home: 'Cup Athletic', away: 'Murphy F.C', court: 2, turn: 2, date: '07/02', time: '16:00', homeScore: 0, awayScore: 2, played: true },
+                    { home: 'Juv. Venadense', away: 'Flamingo F.C', court: 7, turn: 2, date: '07/02', time: '16:00', homeScore: 2, awayScore: 1, played: true },
+                    { home: 'Construshop', away: 'Sportivo Peñarol', court: 3, turn: 1, date: '07/02', time: '14:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'La Banda FC', away: 'Los Resa', court: 5, turn: 1, date: '07/02', time: '14:00', homeScore: 3, awayScore: 2, played: true },
+                    { home: 'Sport Blak', away: 'Schmol Alineaciones', court: 1, turn: 2, date: '07/02', time: '16:00', homeScore: 2, awayScore: 0, played: true }
                 ]
             },
             {
                 round: 4,
                 matches: [
-                    { home: 'Nicassio', away: 'Murphy F.C', court: 3, turn: 1, date: '14/02', time: '15:00', homeScore: 3, awayScore: 0, played: true },
-                    { home: 'Cup Athletic', away: 'Flamingo F.C', court: 4, turn: 1, date: '14/02', time: '15:00', homeScore: 0, awayScore: 2, played: true },
-                    { home: 'Juv. Venadense', away: 'Sportivo Peñarol', court: 7, turn: 1, date: '14/02', time: '15:00', homeScore: 2, awayScore: 2, played: true },
-                    { home: 'Construshop', away: 'Los Resa', court: 1, turn: 2, date: '14/02', time: '17:00', homeScore: 3, awayScore: 0, played: true },
-                    { home: 'La Banda FC', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/02', time: '17:00', homeScore: 5, awayScore: 1, played: true },
+                    { home: 'Nicassio', away: 'Murphy F.C', court: 3, turn: 1, date: '14/02', time: '14:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'Cup Athletic', away: 'Flamingo F.C', court: 4, turn: 1, date: '14/02', time: '14:00', homeScore: 0, awayScore: 2, played: true },
+                    { home: 'Juv. Venadense', away: 'Sportivo Peñarol', court: 7, turn: 1, date: '14/02', time: '14:00', homeScore: 2, awayScore: 2, played: true },
+                    { home: 'Construshop', away: 'Los Resa', court: 1, turn: 2, date: '14/02', time: '16:00', homeScore: 3, awayScore: 0, played: true },
+                    { home: 'La Banda FC', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/02', time: '16:00', homeScore: 5, awayScore: 1, played: true },
                     { 
-                        home: 'Sport Blak', away: 'Pacífico F.C', court: 8, turn: 2, date: '14/02', time: '17:00', 
+                        home: 'Sport Blak', away: 'Pacífico F.C', court: 8, turn: 2, date: '14/02', time: '16:00', 
                         homeScore: 0, awayScore: 0, played: true,
                         details: createPacificoDetails([], []) 
                     }
@@ -194,12 +194,12 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 5,
                 matches: [
-                    { home: 'Nicassio', away: 'Flamingo F.C', court: 1, turn: 1, date: '21/02', time: '15:00', homeScore: 0, awayScore: 1, played: true },
-                    { home: 'Cup Athletic', away: 'Sportivo Peñarol', court: 6, turn: 1, date: '21/02', time: '15:00', homeScore: 1, awayScore: 4, played: true },
-                    { home: 'Juv. Venadense', away: 'Los Resa', court: 8, turn: 1, date: '21/02', time: '15:00', homeScore: 2, awayScore: 3, played: true },
-                    { home: 'Construshop', away: 'Schmol Alineaciones', court: 3, turn: 2, date: '21/02', time: '17:00', homeScore: 2, awayScore: 1, played: true },
+                    { home: 'Nicassio', away: 'Flamingo F.C', court: 1, turn: 1, date: '21/02', time: '14:00', homeScore: 0, awayScore: 1, played: true },
+                    { home: 'Cup Athletic', away: 'Sportivo Peñarol', court: 6, turn: 1, date: '21/02', time: '14:00', homeScore: 1, awayScore: 4, played: true },
+                    { home: 'Juv. Venadense', away: 'Los Resa', court: 8, turn: 1, date: '21/02', time: '14:00', homeScore: 2, awayScore: 3, played: true },
+                    { home: 'Construshop', away: 'Schmol Alineaciones', court: 3, turn: 2, date: '21/02', time: '16:00', homeScore: 2, awayScore: 1, played: true },
                     { 
-                        home: 'La Banda FC', away: 'Pacífico F.C', court: 4, turn: 2, date: '21/02', time: '17:00', 
+                        home: 'La Banda FC', away: 'Pacífico F.C', court: 4, turn: 2, date: '21/02', time: '16:00', 
                         homeScore: 4, awayScore: 0, played: true,
                         details: createPacificoDetails([], [
                             
@@ -210,53 +210,59 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                             
                         ]) 
                     },
-                    { home: 'Sport Blak', away: 'Murphy F.C', court: 7, turn: 2, date: '21/02', time: '17:00', homeScore: 3, awayScore: 1, played: true }
+                    { home: 'Sport Blak', away: 'Murphy F.C', court: 7, turn: 2, date: '21/02', time: '16:00', homeScore: 3, awayScore: 1, played: true }
                 ]
             },
             {
                 round: 6,
                 matches: [
-                    { home: 'Nicassio', away: 'Sportivo Peñarol', court: 1, turn: 1, date: '28/02', time: '15:00', homeScore: 2, awayScore: 1, played: true },
-                    { home: 'Cup Athletic', away: 'Los Resa', court: 7, turn: 1, date: '28/02', time: '15:00', homeScore: 1, awayScore: 6, played: true },
-                    { home: 'Juv. Venadense', away: 'Schmol Alineaciones', court: 8, turn: 1, date: '28/02', time: '15:00', homeScore: 1, awayScore: 1, played: true },
+                    { home: 'Nicassio', away: 'Sportivo Peñarol', court: 1, turn: 1, date: '28/02', time: '14:00', homeScore: 2, awayScore: 1, played: true },
+                    { home: 'Cup Athletic', away: 'Los Resa', court: 7, turn: 1, date: '28/02', time: '14:00', homeScore: 1, awayScore: 6, played: true },
+                    { home: 'Juv. Venadense', away: 'Schmol Alineaciones', court: 8, turn: 1, date: '28/02', time: '14:00', homeScore: 1, awayScore: 1, played: true },
                     { 
-                        home: 'Construshop', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/02', time: '17:00', 
+                        home: 'Construshop', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/02', time: '16:00', 
                         homeScore: 5, awayScore: 2, played: true,
                         details: createPacificoDetails([
                             {player: "Gabriel Romanutti ", goals: 1 },
                             {player: "Manuel Camino ", goals: 1 }], []) 
                     },
-                    { home: 'La Banda FC', away: 'Murphy F.C', court: 5, turn: 2, date: '28/02', time: '17:00', homeScore: 3, awayScore: 1, played: true },
-                    { home: 'Sport Blak', away: 'Flamingo F.C', court: 6, turn: 2, date: '28/02', time: '17:00', homeScore: 2, awayScore: 2, played: true }
+                    { home: 'La Banda FC', away: 'Murphy F.C', court: 5, turn: 2, date: '28/02', time: '16:00', homeScore: 3, awayScore: 1, played: true },
+                    { home: 'Sport Blak', away: 'Flamingo F.C', court: 6, turn: 2, date: '28/02', time: '16:00', homeScore: 2, awayScore: 2, played: true }
                 ]
             },
             {
                 round: 7,
                 matches: [
-                    { home: 'Nicassio', away: 'Sport Blak', court: 5, turn: 2, date: '07/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Construshop', court: 6, turn: 2, date: '07/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'La Banda FC', court: 7, turn: 2, date: '07/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sportivo Peñarol', away: 'Los Resa', court: 2, turn: 1, date: '07/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Sport Blak', court: 5, turn: 2, date: '07/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Cup Athletic', away: 'Construshop', court: 6, turn: 2, date: '07/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Juv. Venadense', away: 'La Banda FC', court: 7, turn: 2, date: '07/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Sportivo Peñarol', away: 'Los Resa', court: 2, turn: 1, date: '07/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
                     { 
-                        home: 'Flamingo F.C', away: 'Pacífico F.C', court: 3, turn: 1, date: '07/03', time: '15:00', 
+                        home: 'Flamingo F.C', away: 'Pacífico F.C', court: 3, turn: 1, date: '07/03', time: '14:00', 
                         homeScore: 2, awayScore: 2, played: true,
                         details: createPacificoDetails([
                             {player: " Samuel Garay ", goals: 1 },
-                            {player: "Gabriel Romanutti ", goals: 1 }], []) 
+                            {player: "Gabriel Romanutti ", goals: 1 }], 
+                            
+                            [
+                                { player: "Franco Garay", type: "amarilla" },
+                                { player: "Joan Gomez", type: "amarilla" },
+                                { player: "Tomás Quinteros", type: "amarilla" },
+                            ]) 
                     },
-                    { home: 'Murphy F.C', away: 'Schmol Alineaciones', court: 4, turn: 1, date: '07/03', time: '15:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'Murphy F.C', away: 'Schmol Alineaciones', court: 4, turn: 1, date: '07/03', time: '14:00', homeScore: 0, awayScore: 0, played: false }
                 ]
             },
             {
                 round: 8,
                 matches: [
-                    { home: 'Nicassio', away: 'La Banda FC', court: 6, turn: 1, date: '14/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Juv. Venadense', court: 7, turn: 1, date: '14/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Construshop', away: 'Sport Blak', court: 8, turn: 1, date: '14/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sportivo Peñarol', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Flamingo F.C', away: 'Murphy F.C', court: 3, turn: 2, date: '14/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'La Banda FC', court: 6, turn: 1, date: '14/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Cup Athletic', away: 'Juv. Venadense', court: 7, turn: 1, date: '14/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Construshop', away: 'Sport Blak', court: 8, turn: 1, date: '14/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Sportivo Peñarol', away: 'Schmol Alineaciones', court: 2, turn: 2, date: '14/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Flamingo F.C', away: 'Murphy F.C', court: 3, turn: 2, date: '14/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
                     { 
-                        home: 'Pacífico F.C', away: 'Los Resa', court: 5, turn: 2, date: '14/03', time: '17:00', 
+                        home: 'Pacífico F.C', away: 'Los Resa', court: 5, turn: 2, date: '14/03', time: '16:00', 
                         homeScore: 0, awayScore: 0, played: false,
                         details: createPacificoDetails([], []) 
                     }
@@ -265,28 +271,28 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 9,
                 matches: [
-                    { home: 'Nicassio', away: 'Construshop', court: 4, turn: 1, date: '21/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'La Banda FC', court: 7, turn: 2, date: '21/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'Sport Blak', court: 8, turn: 2, date: '21/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Construshop', court: 4, turn: 1, date: '21/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Cup Athletic', away: 'La Banda FC', court: 7, turn: 2, date: '21/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Juv. Venadense', away: 'Sport Blak', court: 8, turn: 2, date: '21/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
                     { 
-                        home: 'Sportivo Peñarol', away: 'Pacífico F.C', court: 2, turn: 1, date: '21/03', time: '15:00', 
+                        home: 'Sportivo Peñarol', away: 'Pacífico F.C', court: 2, turn: 1, date: '21/03', time: '14:00', 
                         homeScore: 0, awayScore: 0, played: false,
                         details: createPacificoDetails([], []) 
                     },
-                    { home: 'Flamingo F.C', away: 'Schmol Alineaciones', court: 6, turn: 1, date: '21/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Murphy F.C', away: 'Los Resa', court: 1, turn: 2, date: '21/03', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'Flamingo F.C', away: 'Schmol Alineaciones', court: 6, turn: 1, date: '21/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Murphy F.C', away: 'Los Resa', court: 1, turn: 2, date: '21/03', time: '16:00', homeScore: 0, awayScore: 0, played: false }
                 ]
             },
             {
                 round: 10,
                 matches: [
-                    { home: 'Nicassio', away: 'Juv. Venadense', court: 7, turn: 1, date: '28/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Cup Athletic', away: 'Sport Blak', court: 5, turn: 2, date: '28/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Construshop', court: 6, turn: 2, date: '28/03', time: '17:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sportivo Peñarol', away: 'Murphy F.C', court: 1, turn: 1, date: '28/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Flamingo F.C', away: 'Los Resa', court: 2, turn: 1, date: '28/03', time: '15:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Juv. Venadense', court: 7, turn: 1, date: '28/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Cup Athletic', away: 'Sport Blak', court: 5, turn: 2, date: '28/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'La Banda FC', away: 'Construshop', court: 6, turn: 2, date: '28/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Sportivo Peñarol', away: 'Murphy F.C', court: 1, turn: 1, date: '28/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Flamingo F.C', away: 'Los Resa', court: 2, turn: 1, date: '28/03', time: '14:00', homeScore: 0, awayScore: 0, played: false },
                     { 
-                        home: 'Schmol Alineaciones', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/03', time: '17:00', 
+                        home: 'Schmol Alineaciones', away: 'Pacífico F.C', court: 4, turn: 2, date: '28/03', time: '16:00', 
                         homeScore: 0, awayScore: 0, played: false, 
                         details: createPacificoDetails([], []) 
                     }
@@ -295,16 +301,16 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             {
                 round: 11,
                 matches: [
-                    { home: 'Nicassio', away: 'Cup Athletic', court: 2, turn: 1, date: '04/04', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Juv. Venadense', away: 'Construshop', court: 3, turn: 1, date: '04/04', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'La Banda FC', away: 'Sport Blak', court: 7, turn: 1, date: '04/04', time: '15:00', homeScore: 0, awayScore: 0, played: false },
-                    { home: 'Sportivo Peñarol', away: 'Flamingo F.C', court: 1, turn: 2, date: '04/04', time: '17:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Nicassio', away: 'Cup Athletic', court: 2, turn: 1, date: '04/04', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Juv. Venadense', away: 'Construshop', court: 3, turn: 1, date: '04/04', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'La Banda FC', away: 'Sport Blak', court: 7, turn: 1, date: '04/04', time: '14:00', homeScore: 0, awayScore: 0, played: false },
+                    { home: 'Sportivo Peñarol', away: 'Flamingo F.C', court: 1, turn: 2, date: '04/04', time: '16:00', homeScore: 0, awayScore: 0, played: false },
                     { 
-                        home: 'Murphy F.C', away: 'Pacífico F.C', court: 6, turn: 2, date: '04/04', time: '17:00', 
+                        home: 'Murphy F.C', away: 'Pacífico F.C', court: 6, turn: 2, date: '04/04', time: '16:00', 
                         homeScore: 0, awayScore: 0, played: false,
                         details: createPacificoDetails([], []) 
                     },
-                    { home: 'Schmol Alineaciones', away: 'Los Resa', court: 8, turn: 2, date: '04/04', time: '17:00', homeScore: 0, awayScore: 0, played: false }
+                    { home: 'Schmol Alineaciones', away: 'Los Resa', court: 8, turn: 2, date: '04/04', time: '16:00', homeScore: 0, awayScore: 0, played: false }
                 ]
             }
 
@@ -321,8 +327,10 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
             { name: "Juan Molinari", teamId: "pacifico", goals: 1, yellow: 1, red: 0, img: "imagen/jugadores/juan_molinari.png", suspensionMatches: 0, injuryStatus: "Desgarro Muscular" },
             { name: "Samuel Garay", teamId: "pacifico", goals: 5, yellow: 1, red: 0, img: "imagen/jugadores/samuel_garay.png", suspensionMatches: 0 },
             { name: "Tobias Fresco", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tobias_fresco.png", suspensionMatches: 0 },
-            { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 0, red: 1, img: "imagen/jugadores/tomas_quinteros.png", suspensionMatches: 1 },
+            { name: "Tomás Quinteros", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/tomas_quinteros.png", suspensionMatches: 0 },
             { name: "Manuel Camino", teamId: "pacifico", goals: 1, yellow: 0, red: 0, img: "imagen/jugadores/manuel_camino.png", suspensionMatches: 0 },
+            { name: "Franco Garay", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/franco_garay.png", suspensionMatches: 0 },
+            { name: "Joan Gomez", teamId: "pacifico", goals: 0, yellow: 1, red: 0, img: "imagen/jugadores/joan_gomez.png", suspensionMatches: 0 },
             // Ejemplos añadidos para demostración de las nuevas tablas
            // { name: "Lucas Pérez", teamId: "murphy", goals: 1, yellow: 3, red: 0, img: "imagen/jugadores/default.png", suspensionMatches: 1 },
             { name: "Bernardo Giordano", teamId: "pacifico", goals: 0, yellow: 0, red: 0, img: "imagen/jugadores/bernardo_giordano.png", injuryStatus: false  },
