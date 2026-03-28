@@ -263,7 +263,7 @@ const FALLBACK_IMG = "https://placehold.co/100x100/111/e50914?text=FC";
                     { home: 'Flamingo F.C', away: 'Murphy F.C', court: 3, turn: 2, date: '14/03', time: '16:00', homeScore: 0, awayScore: 0, played: false },
                     { 
                         home: 'Pacífico F.C', away: 'Los Resa', court: 5, turn: 2, date: '14/03', time: '16:00', 
-                        homeScore: 0, awayScore: 0, played: false,
+                        homeScore: 2, awayScore: 0, played: true,
                         details: createPacificoDetails([], []) 
                     }
                 ]
